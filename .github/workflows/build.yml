@@ -9,10 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # 定义要构建的镜像类型列表
         image_type: ["loongarch64_99pi_tf", "loongarch64_99pi_wifi"]
-        # 添加此参数确保空矩阵也能运行
-        include: [{}]
 
     steps:
       - name: Maximize build space
