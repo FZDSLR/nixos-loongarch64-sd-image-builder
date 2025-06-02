@@ -53,7 +53,7 @@ jobs:
           cp -v $(readlink result)/*.img.zst ${{ matrix.image_type }}.img.zst
 
       - name: Upload SD Image Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.image_type }}-sd-image
           path: ${{ matrix.image_type }}.img.zst
