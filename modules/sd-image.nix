@@ -24,7 +24,7 @@
   sdImage = {
     rootPartitionUUID = "d9d94464-db0a-4f2a-ab79-bfb15bc9c8b4";
     imageBaseName = lib.mkDefault "nixos-loongarch64-sd-image";
-    compressImage = true;
+    compressImage = false;
     populateFirmwareCommands = lib.optionalString (config.boot.loader.generic-extlinux-compatible.enable) ''
       ${config.boot.loader.generic-extlinux-compatible.populateCmd} -c ${config.system.build.toplevel} -d ./firmware
       '';
