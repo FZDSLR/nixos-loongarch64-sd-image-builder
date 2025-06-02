@@ -1,0 +1,49 @@
+{
+  "nodes": {
+    "nixos-loongarch64-builder": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1748834408,
+        "narHash": "sha256-T45xkJXkdEzjScesI95+6fpXrARhuqBbFcUyU9fw5Es=",
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-builder",
+        "rev": "37e1ebb8c30800efcaf1c033fb84275976e896f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-builder",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1748800724,
+        "narHash": "sha256-7F0jpK/yyfqvmCU13QHMv0wONAIHK+Dv/cTOBCvKd2s=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "769e9c24f74df05bb51a81f5c04437e73be7d81c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixos-loongarch64-builder": "nixos-loongarch64-builder",
+        "nixpkgs": [
+          "nixos-loongarch64-builder",
+          "nixpkgs"
+        ]
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

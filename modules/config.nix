@@ -1,0 +1,44 @@
+{ lib, pkgs, nixpkgs, ... }:
+
+{
+  boot = {
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
+    initrd.includeDefaultModules = false;
+  };
+
+  environment.systemPackages = with pkgs; [
+    git
+    curl
+    vim
+    neofetch
+    htop
+  ];
+
+  services.openssh = {
+    enable = lib.mkDefault true;
+    settings = {
+      PasswordAuthentication = lib.mkDefault true;
+      PermitRootLogin = lib.mkDefault "prohibit-password";
+    };
+    openFirewall = lib.mkDefault true;
+  };
+
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 512;
+  } ];
+
+  networking.hostName = "nixos-loongarch64";
+
+  users.users.root = {
+    hashedPassword = "$y$j9T$QJlujDybThaC1.xVHXdny0$7LwbkchZr0GRAeswHkBSjhcC9YLmWnadJxEPVt4xgM4"; # root
+  };
+
+  users.users.loongarch = {
+    hashedPassword = "$y$j9T$ydzDYKukMqysEmlmTr7h8.$cyu7Yyj/e6naeWBWy5gsPr5Nw4EjoTnf7QDSA9agAy3"; # loongarch
+    isNormalUser = true;
+    home = "/home/loongarch";
+    extraGroups = ["users" "networkmanager" "wheel"];
+  };
+
+}
