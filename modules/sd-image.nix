@@ -5,6 +5,8 @@
     "${nixpkgs}/nixos/modules/installer/sd-card/sd-image.nix"
   ];
 
+  hardware.enableAllHardware = lib.mkForce false; # https://github.com/NixOS/nixpkgs/issues/154163
+
   boot.kernelParams = lib.mkDefault [
     "console=ttyS0,115200"
     "rootfstype=ext4"
