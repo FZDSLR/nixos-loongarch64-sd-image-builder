@@ -56,4 +56,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.image_type }}-sd-image
-          path: ${{ matrix.image_type }}.img.zst
+          path: ${{ matrix.image_type }}.img
