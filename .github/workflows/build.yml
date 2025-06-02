@@ -50,7 +50,7 @@ jobs:
           # 构建指定镜像
           nix build .#nixosConfigurations.${{ matrix.image_type }}.config.system.build.sdImage
           # 复制镜像文件到工作目录
-          cp -v $(readlink result)/*.img.zst ${{ matrix.image_type }}.img.zst
+          cp -v $(readlink result)/sd-image/*.img.zst ${{ matrix.image_type }}.img.zst
 
       - name: Upload SD Image Artifact
         uses: actions/upload-artifact@v4
