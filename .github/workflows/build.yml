@@ -2,9 +2,7 @@ name: Build Loongarch64 99pi sd image
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build-sd-images:
