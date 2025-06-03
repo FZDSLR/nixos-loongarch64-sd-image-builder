@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1748834408,
-        "narHash": "sha256-T45xkJXkdEzjScesI95+6fpXrARhuqBbFcUyU9fw5Es=",
+        "lastModified": 1748960120,
+        "narHash": "sha256-hfJHmEukMqeDSdwKJVnPfPfCanYyU5SxX2HhUIrD0Qw=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "37e1ebb8c30800efcaf1c033fb84275976e896f2",
+        "rev": "1e6aec661befe8c8c091f73903761c925c1614e5",
         "type": "github"
       },
       "original": {
@@ -20,11 +20,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1748800724,
-        "narHash": "sha256-7F0jpK/yyfqvmCU13QHMv0wONAIHK+Dv/cTOBCvKd2s=",
+        "lastModified": 1748888019,
+        "narHash": "sha256-q1YJfCE0NfIXUIuS23VraT198bJ2P2fRTWsagGBH8Eg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "769e9c24f74df05bb51a81f5c04437e73be7d81c",
+        "rev": "0e4118f672c035fa7b4f062d257fca286a1eb5ab",
         "type": "github"
       },
       "original": {
