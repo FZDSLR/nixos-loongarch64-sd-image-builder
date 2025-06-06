@@ -12,6 +12,21 @@
     vim
     neofetch
     htop
+    fish
+    which
+    mtdutils
+    i2c-tools
+    openssl
+    usbutils
+    ntp
+    jq
+    file
+    tree
+    gnutar
+    p7zip
+    unzip
+    busybox
+    bat
   ];
 
   services.openssh = {

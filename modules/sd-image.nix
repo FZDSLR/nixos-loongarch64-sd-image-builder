@@ -9,10 +9,11 @@
 
   boot.kernelParams = [
     "console=ttyS0,115200"
+    "root=/dev/disk/by-label/NIXOS_SD"
     "rootfstype=ext4"
     "rootwait"
     "rw"
-    "earlycon"
+    "noatime"
   ];
 
   boot.loader = {
