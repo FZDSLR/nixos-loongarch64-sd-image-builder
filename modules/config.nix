@@ -3,12 +3,7 @@
 {
   boot = {
     kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
-    initrd.includeDefaultModules = false;
-    initrd.availableKernelModules = lib.mkForce [
-      "ext4"
-      "sd_mod"
-      "mmc_block"
-    ];
+    initrd.enable = false;
   };
 
   environment.systemPackages = with pkgs; [
