@@ -7,18 +7,33 @@
 
   hardware.enableAllHardware = lib.mkForce false; # https://github.com/NixOS/nixpkgs/issues/154163
 
-  boot.kernelParams = lib.mkDefault [
+  boot.kernelParams = [
     "console=ttyS0,115200"
     "rootfstype=ext4"
     "rootwait"
     "rw"
     "earlycon"
-    "rootrwoptions=rw,noatime"
   ];
 
   boot.loader = {
     grub.enable = false;
     generic-extlinux-compatible.enable = true;
+  };
+
+  fileSystems = lib.mkForce {
+    "/boot" = {
+      device = "/dev/disk/by-label/${config.sdImage.firmwarePartitionName}";
+      fsType = "vfat";
+      options = [ "nofail" ];
+    };
+    "/" = {
+      device = "/dev/disk/by-label/NIXOS_SD";
+      fsType = "ext4";
+      options = [
+        "noatime"
+        "nodiratime"
+      ];
+    };
   };
 
   sdImage = {

@@ -2,6 +2,7 @@
   inputs = {
     nixos-loongarch64-builder.url = "github:FZDSLR/nixos-loongarch64-builder";
     nixpkgs.follows = "nixos-loongarch64-builder/nixpkgs";
+    rust-overlay.follows = "nixos-loongarch64-builder/rust-overlay";
   };
 
   nixConfig = {
@@ -19,28 +20,18 @@
     {
       self,
       nixpkgs,
+      rust-overlay,
       nixos-loongarch64-builder,
       ...
     }:
     let
       baseConfig = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs; };
+        specialArgs = { inherit nixpkgs rust-overlay; };
         modules = [
-          {
-            nixpkgs.crossSystem = {
-              system = "loongarch64-linux";
-              config = "loongarch64-unknown-linux-gnu";
-              gcc.arch = "loongarch64";
-              linux-kernel = {
-                name = "loong64";
-                target = "uImage";
-              };
-            };
-          }
+          (import "${nixos-loongarch64-builder}/modules/cross-config.nix")
           (import ./modules/sd-image.nix)
           (import ./modules/config.nix)
-          (import "${nixos-loongarch64-builder}/overlays/default.nix")
         ];
       };
 
