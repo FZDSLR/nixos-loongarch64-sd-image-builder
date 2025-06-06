@@ -4,14 +4,10 @@
   boot = {
     kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
     initrd.includeDefaultModules = false;
-    initrd.availableKernelModules = [
-      "mmc_block"
+    initrd.availableKernelModules = lib.mkForce [
+      "ext4"
       "sd_mod"
-      "uhci_hcd"
-      "ehci_hcd"
-      "ehci_pci"
-      "ohci_hcd"
-      "ohci_pci"
+      "mmc_block"
     ];
   };
 
