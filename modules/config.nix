@@ -6,7 +6,6 @@
     initrd.includeDefaultModules = false;
     initrd.availableKernelModules = [
       "mmc_block"
-      "sdhci"
       "sd_mod"
       "uhci_hcd"
       "ehci_hcd"
@@ -16,14 +15,12 @@
     ];
   };
 
-
   environment.systemPackages = with pkgs; [
     git
     curl
     vim
     neofetch
     htop
-    fish
     which
     mtdutils
     i2c-tools
