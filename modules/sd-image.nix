@@ -1,4 +1,10 @@
-{ lib, config, pkgs, nixpkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  nixpkgs,
+  ...
+}:
 
 {
   imports = [
@@ -7,14 +13,18 @@
 
   hardware.enableAllHardware = lib.mkForce false; # https://github.com/NixOS/nixpkgs/issues/154163
 
-  boot.kernelParams = [
-    "console=ttyS0,115200"
-    "root=LABEL=NIXOS_SD"
-    "rootfstype=ext4"
-    "rootwait"
-    "rw"
-    "noatime"
-  ];
+  boot = {
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
+    initrd.includeDefaultModules = false;
+    initrd.availableKernelModules = lib.mkForce [
+      "ext4"
+      "sd_mod"
+      "mmc_block"
+    ];
+    kernelParams = [
+      "console=ttyS0,115200"
+    ];
+  };
 
   boot.loader = {
     grub.enable = false;
@@ -43,7 +53,7 @@
     compressImage = false;
     populateFirmwareCommands = lib.optionalString (config.boot.loader.generic-extlinux-compatible.enable) ''
       ${config.boot.loader.generic-extlinux-compatible.populateCmd} -c ${config.system.build.toplevel} -d ./firmware
-      '';
+    '';
     firmwarePartitionName = "BOOT";
     firmwareSize = 256; # MiB
 

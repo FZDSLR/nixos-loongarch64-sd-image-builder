@@ -1,11 +1,11 @@
-{ lib, pkgs, nixpkgs, ... }:
+{
+  lib,
+  pkgs,
+  nixpkgs,
+  ...
+}:
 
 {
-  boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
-    initrd.enable = false;
-  };
-
   environment.systemPackages = with pkgs; [
     git
     curl
@@ -37,10 +37,12 @@
     openFirewall = lib.mkDefault true;
   };
 
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 512;
-  } ];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 512;
+    }
+  ];
 
   networking.hostName = "nixos-loongarch64";
 
