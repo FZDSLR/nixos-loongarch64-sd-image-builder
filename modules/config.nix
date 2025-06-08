@@ -26,6 +26,7 @@
     unzip
     busybox
     bat
+    fish
   ];
 
   services.openssh = {
