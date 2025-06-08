@@ -1,0 +1,104 @@
+{
+  "nodes": {
+    "nixos-loongarch64-builder": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1749358932,
+        "narHash": "sha256-Ahk6OjAhcc59n8Y02OePJ/4p5iZpAIuZQPkoskOPn0E=",
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-builder",
+        "rev": "9a59d337420aa26b829e0ad014a9a8fa9820271e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-builder",
+        "type": "github"
+      }
+    },
+    "nixos-loongarch64-sd-image-builder": {
+      "inputs": {
+        "nixos-loongarch64-builder": "nixos-loongarch64-builder",
+        "nixpkgs": [
+          "nixos-loongarch64-sd-image-builder",
+          "nixos-loongarch64-builder",
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "nixos-loongarch64-sd-image-builder",
+          "nixos-loongarch64-builder",
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749359201,
+        "narHash": "sha256-TBHOMdnP9W6qZ92IN74GO4ZJVEvSGEHvDKbMROhZf04=",
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-sd-image-builder",
+        "rev": "b2641eee77220a1c3c40f8ef8bec6179d9c82dfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FZDSLR",
+        "repo": "nixos-loongarch64-sd-image-builder",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1749319518,
+        "narHash": "sha256-Pid6UN/PvF2bzaKrxeHNmIu9X5zHNuwl+AcXxRg7zZM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e863e0fe1e9e24fc58e17e7abac6ce0024e87e7b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixos-loongarch64-sd-image-builder": "nixos-loongarch64-sd-image-builder",
+        "nixpkgs": [
+          "nixos-loongarch64-sd-image-builder",
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "nixos-loongarch64-sd-image-builder",
+          "rust-overlay"
+        ]
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-loongarch64-sd-image-builder",
+          "nixos-loongarch64-builder",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749263796,
+        "narHash": "sha256-m52UsUrcNjAzgc0cwcg94INkiFyVPTn6KbFGr4x4cu8=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "6e1d910306edfe6e4b718878f222c5672500d6b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
