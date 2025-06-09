@@ -6,11 +6,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1749457639,
-        "narHash": "sha256-sn/6K8+gv+lyYR3QmhXRjorKdeZL+pjJh/QR7+W+T8Y=",
+        "lastModified": 1749458143,
+        "narHash": "sha256-g+mVRPkNJ6+J7eypYvCSd7Uj50KxJtr2EHmJyQ81R8g=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "f1634a51e09653125729828bdb0021f7d54fb333",
+        "rev": "b9865df371f092d98427ed9a34ff6ee74ddd5ad7",
         "type": "github"
       },
       "original": {
