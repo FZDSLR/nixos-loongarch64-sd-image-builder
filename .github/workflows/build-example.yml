@@ -7,7 +7,7 @@ on:
       - '**'
 
 jobs:
-  build-base-packages:
+  build-example:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,4 +51,4 @@ jobs:
 
       - name: Build example
         run: |
-          nix build .#nixosConfigurations.${{ matrix.image_type }}.config.system.build.sdImage | cachix push loongarch64-cross-test
+          nix build .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel | cachix push loongarch64-cross-test
