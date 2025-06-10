@@ -24,7 +24,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYA3PS2P9GDKxQ/0XavUaCgHRDpvFQwnmytCQAHkX53 fzdslr_nixos_z3air"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHU/bF4HG69uDm/JkNYUJi8RdmHK0N7YanuLgK8GaMFd fzdslr@qq.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKfA+7TiISP4WoSVU4QORt9VmAJFcBpSglRrMQCxc+ fzdslr-win-to-go"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpiq49gTZrBEpJGuvdvgQt/ugKnhCkrE+5tVCAYaJAX fzdslr@qq.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJlnkfwUEBt+Ws6p8OEE1rqv25IUhk6T1AaQVqXyLHT fzdslr@qq.com"
     ];
   };
 
@@ -34,7 +34,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYA3PS2P9GDKxQ/0XavUaCgHRDpvFQwnmytCQAHkX53 fzdslr_nixos_z3air"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHU/bF4HG69uDm/JkNYUJi8RdmHK0N7YanuLgK8GaMFd fzdslr@qq.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKfA+7TiISP4WoSVU4QORt9VmAJFcBpSglRrMQCxc+ fzdslr-win-to-go"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpiq49gTZrBEpJGuvdvgQt/ugKnhCkrE+5tVCAYaJAX fzdslr@qq.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJlnkfwUEBt+Ws6p8OEE1rqv25IUhk6T1AaQVqXyLHT fzdslr@qq.com"
     ];
   };
 
