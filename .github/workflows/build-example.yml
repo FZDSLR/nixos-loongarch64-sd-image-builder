@@ -52,4 +52,4 @@ jobs:
       - name: Build example
         run: |
           cd example
-          nix build .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel | cachix push loongarch64-cross-test
+          nix build --no-link --print-out-paths .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel | cachix push loongarch64-cross-test
