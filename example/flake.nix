@@ -1,8 +1,19 @@
 {
   inputs = {
-    nixos-loongarch64-sd-image-builder.url = "github:FZDSLR/nixos-loongarch64-sd-image-builder";
-    nixpkgs.follows = "nixos-loongarch64-sd-image-builder/nixpkgs";
-    rust-overlay.follows = "nixos-loongarch64-sd-image-builder/rust-overlay";
+    nixos-loongarch64-sd-image-builder = {
+      url = "github:FZDSLR/nixos-loongarch64-sd-image-builder";
+      inputs.nixos-loongarch64-builder.follows = "nixos-loongarch64-builder";
+    };
+
+    nixos-loongarch64-builder.url = "github:FZDSLR/nixos-loongarch64-builder";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs.follows = "nixos-loongarch64-builder/nixpkgs";
+    rust-overlay.follows = "nixos-loongarch64-builder/rust-overlay";
   };
 
   nixConfig = {
@@ -20,6 +31,7 @@
     {
       self,
       nixpkgs,
+      home-manager,
       nixos-loongarch64-sd-image-builder,
       ...
     }:
@@ -36,6 +48,12 @@
               )
               # or import a module from a file
               (./extra-config.nix)
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+              }
             ];
           };
     };

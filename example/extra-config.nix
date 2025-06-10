@@ -48,13 +48,12 @@
     defaultEditor = true;
   };
 
+  programs.fish.enable = true;
+
   virtualisation = {
     containers.enable = true;
     podman = {
       enable = true;
-      package = pkgs.podman.override {
-        extraRuntimes = [ pkgs.crun ];
-      };
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true;
     };

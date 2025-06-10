@@ -26,7 +26,6 @@
     unzip
     busybox
     bat
-    fish
   ];
 
   services.openssh = {
@@ -38,14 +37,14 @@
     openFirewall = lib.mkDefault true;
   };
 
-  swapDevices = [
+  swapDevices = lib.mkDefault [
     {
       device = "/var/lib/swapfile";
       size = 512;
     }
   ];
 
-  networking.hostName = "nixos-loongarch64";
+  networking.hostName = lib.mkDefault "nixos-loongarch64";
 
   users.users.root = {
     hashedPassword = lib.mkDefault "$y$j9T$QJlujDybThaC1.xVHXdny0$7LwbkchZr0GRAeswHkBSjhcC9YLmWnadJxEPVt4xgM4"; # root
