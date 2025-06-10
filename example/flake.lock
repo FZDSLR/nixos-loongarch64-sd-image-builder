@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749526396,
+        "narHash": "sha256-UL9F76abAk87llXOrcQRjhd5OaOclUd6MIltsqcUZmo=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "427c96044f11a5da50faf6adaf38c9fa47e6d044",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nixos-loongarch64-builder": {
       "inputs": {
         "nixpkgs": "nixpkgs",
@@ -36,11 +57,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749458612,
-        "narHash": "sha256-ELECdV7EckhToofcy/aOLhwzcgwl4c6/eVn5bWaZSho=",
+        "lastModified": 1749530057,
+        "narHash": "sha256-8EJLOz0qNQ3DCoHLUsHQ5Nwy7arDG7R7CxW/wmtIATM=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "747a992a0ccc335a414ee9b05036a4eaa9788234",
+        "rev": "e77f3544a37596c96e1e8171c83878b42f970744",
         "type": "github"
       },
       "original": {
@@ -67,6 +88,7 @@
     },
     "root": {
       "inputs": {
+        "home-manager": "home-manager",
         "nixos-loongarch64-builder": "nixos-loongarch64-builder",
         "nixos-loongarch64-sd-image-builder": "nixos-loongarch64-sd-image-builder",
         "nixpkgs": [

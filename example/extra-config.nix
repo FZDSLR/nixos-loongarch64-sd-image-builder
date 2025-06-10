@@ -1,14 +1,30 @@
-{ lib, pkgs, nixpkgs, ... }: {
+{
+  lib,
+  pkgs,
+  nixpkgs,
+  ...
+}:
+{
   users.users."fzdslr" = {
     hashedPassword = "$y$j9T$NZY7.GJLZWNyMlxD/XWQq/$ireCUMLao7t/mT/jrInr.ADGR8eVzUnHYhKw81qIYT8";
 
     isNormalUser = true;
     home = "/home/fzdslr";
-    extraGroups = ["users" "networkmanager" "wheel" "docker" "spi" "i2c" "gpio" "navidrome"];
+    extraGroups = [
+      "users"
+      "networkmanager"
+      "wheel"
+      "docker"
+      "spi"
+      "i2c"
+      "gpio"
+      "navidrome"
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYA3PS2P9GDKxQ/0XavUaCgHRDpvFQwnmytCQAHkX53 fzdslr_nixos_z3air"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHU/bF4HG69uDm/JkNYUJi8RdmHK0N7YanuLgK8GaMFd fzdslr@qq.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKfA+7TiISP4WoSVU4QORt9VmAJFcBpSglRrMQCxc+ fzdslr-win-to-go"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpiq49gTZrBEpJGuvdvgQt/ugKnhCkrE+5tVCAYaJAX fzdslr@qq.com"
     ];
   };
 
@@ -18,6 +34,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYA3PS2P9GDKxQ/0XavUaCgHRDpvFQwnmytCQAHkX53 fzdslr_nixos_z3air"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHU/bF4HG69uDm/JkNYUJi8RdmHK0N7YanuLgK8GaMFd fzdslr@qq.com"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALKfA+7TiISP4WoSVU4QORt9VmAJFcBpSglRrMQCxc+ fzdslr-win-to-go"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpiq49gTZrBEpJGuvdvgQt/ugKnhCkrE+5tVCAYaJAX fzdslr@qq.com"
     ];
   };
 
@@ -25,8 +42,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  users.groups.gpio = {};
-  users.groups.spi = {};
+  users.groups.gpio = { };
+  users.groups.spi = { };
   services.udev.extraRules = ''
     SUBSYSTEM=="gpio", KERNEL=="gpiochip*", ACTION=="add", RUN+="${pkgs.bash}/bin/bash -c 'chown root:gpio /sys/class/gpio/export /sys/class/gpio/unexport ; chmod 220 /sys/class/gpio/export /sys/class/gpio/unexport'"
     SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${pkgs.bash}/bin/bash -c 'chown root:gpio /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
@@ -50,17 +67,19 @@
 
   programs.fish.enable = true;
 
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
+  # runc not supported yet and virtualisation.podman.package use extra runtime runc
+  #   virtualisation = {
+  #     containers.enable = true;
+  #     podman = {
+  #       enable = true;
+  #       dockerCompat = true;
+  #       defaultNetwork.settings.dns_enabled = true;
+  #       package = pkgs.podman;
+  #     };
+  #   };
 
   services.ntp = {
     enable = true;
-    servers = ["ntp.tuna.tsinghua.edu.cn"];
+    servers = [ "ntp.tuna.tsinghua.edu.cn" ];
   };
 }
