@@ -38,6 +38,8 @@
     ];
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
+
   time.timeZone = "Asia/Shanghai";
 
   nixpkgs.config.allowUnfree = true;
