@@ -68,15 +68,15 @@
   programs.fish.enable = true;
 
   # runc not supported yet and virtualisation.podman.package use extra runtime runc
-  #   virtualisation = {
-  #     containers.enable = true;
-  #     podman = {
-  #       enable = true;
-  #       dockerCompat = true;
-  #       defaultNetwork.settings.dns_enabled = true;
-  #       package = pkgs.podman;
-  #     };
-  #   };
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+      package = pkgs.podman;
+    };
+  };
 
   services.ntp = {
     enable = true;
