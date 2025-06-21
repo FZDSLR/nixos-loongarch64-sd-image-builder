@@ -27,11 +27,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1750443340,
-        "narHash": "sha256-eHM9a2FkNPMM4K03o/4vpgPfmJFPZTHH+rXFZ0r3gnw=",
+        "lastModified": 1750529640,
+        "narHash": "sha256-mRypYbBCGAH8zFhCGX3gv9ONr9x280jCWwoY9lxPriQ=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "3efe901be2c47bfbf502bf352a3ece0c8e02d607",
+        "rev": "53eb35fdf82b600aa96fd32cf762ad0e018c0e7c",
         "type": "github"
       },
       "original": {
@@ -57,11 +57,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750371090,
-        "narHash": "sha256-4CXjklfPvSPoiuVd7FlBvv3rWT0hRK66GIr49483Gmo=",
+        "lastModified": 1750457494,
+        "narHash": "sha256-67ByWYcfyaVmNFUt2F070FmtP/1Fg3e3NavB0mD+jNg=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "bf1d6bc687b7726d64fc724f12cb8a19baf35a57",
+        "rev": "cb0f5ec190a61618255650727319f6d96b53432d",
         "type": "github"
       },
       "original": {
@@ -109,11 +109,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750387093,
-        "narHash": "sha256-MgL1+yNVcSD6OlzSmKt5GS4RmAQnNCjckjgPC1hmMPg=",
+        "lastModified": 1750473400,
+        "narHash": "sha256-wiW2j63MyGQyyijRF25hf7Ab7vx4G8pCiGjUe3OGV4c=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "517e9871d182346b53bb7f23fed00810c14db396",
+        "rev": "3d7d4c4e284f26d6dc4840491c66884912be0062",
         "type": "github"
       },
       "original": {
