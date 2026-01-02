@@ -39,6 +39,7 @@
 
   programs.vim = {
     enable = true;
+    packageConfigurable = pkgs.vim;
     defaultEditor = true;
   };
   # This value determines the Home Manager release that your
