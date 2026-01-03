@@ -7,7 +7,7 @@ on:
       - '**'
       - '!.github/**'
   pull_request:
-    branches: [master]
+    branches: [main]
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
@@ -54,7 +54,30 @@ jobs:
           name: loongarch64-cross-test
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - name: Build example
+      - name: Build example and push to Cachix
+        id: build
         run: |
           cd example
-          nix build --no-link --print-out-paths .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel | cachix push loongarch64-cross-test
+          OUT_PATH=$(nix eval --raw --quiet .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel.outPath)
+          nix build --no-link --print-out-paths .#nixosConfigurations.loongarch64_99pi_tf_custom.config.system.build.toplevel
+          echo "$OUT_PATH" | cachix push loongarch64-cross-test
+          echo "OUTPUT_PATH=$OUT_PATH" >> $GITHUB_ENV
+
+      - name: Save output path to file
+        if: success()
+        run: |
+          cd example
+          echo "${{ env.OUTPUT_PATH }}" > system_path.txt
+          echo "Saved output path to example/system_path.txt: ${{ env.OUTPUT_PATH }}"
+
+      - name: Auto commit system_path.txt to result branch
+        if: success() && env.OUTPUT_PATH != ''
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+            # 提交信息
+            commit_message: "Build System Update: ${{ env.OUTPUT_PATH }}"
+            branch: example-result
+            file_pattern: example/system_path.txt
+            create_branch: true
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
