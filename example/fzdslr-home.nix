@@ -6,6 +6,7 @@
 
   home.packages = with pkgs; [
     quickjs-ng
+    duf
   ];
 
   programs.fish = {

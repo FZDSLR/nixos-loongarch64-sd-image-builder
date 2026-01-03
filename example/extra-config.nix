@@ -38,7 +38,19 @@
     ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
+  nix.settings = {
+    substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://loongarch64-cross-test.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "loongarch64-cross-test.cachix.org-1:qiDlGssTkRx6m2MpYmUiA9DIWbsB2JyBiFUy47t67nQ="
+    ];
+  };
+
+  boot.kernelPackages = pkgs.linuxPackages_aosc_2k300;
 
   time.timeZone = "Asia/Shanghai";
 
@@ -69,7 +81,6 @@
 
   programs.fish.enable = true;
 
-  # runc not supported yet and virtualisation.podman.package use extra runtime runc
   virtualisation = {
     containers.enable = true;
     podman = {
@@ -82,6 +93,9 @@
 
   services.ntp = {
     enable = true;
-    servers = [ "ntp.tuna.tsinghua.edu.cn" ];
+    servers = [
+      "ntp.aliyun.com"
+      "ntp.tencent.com"
+    ];
   };
 }
