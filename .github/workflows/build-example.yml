@@ -79,5 +79,6 @@ jobs:
             branch: example-result
             file_pattern: example/system_path.txt
             create_branch: true
+            push_options: --force
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
