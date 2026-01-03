@@ -42,6 +42,7 @@
     substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://loongarch64-cross-test.cachix.org"
+      "https://nix-community.cachix.org"
     ];
 
     trusted-public-keys = [
