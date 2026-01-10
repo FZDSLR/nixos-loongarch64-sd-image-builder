@@ -38,6 +38,8 @@
     ];
   };
 
+  users.groups.media = {};
+
   nix.settings = {
     substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
@@ -51,7 +53,7 @@
     ];
   };
 
-  imports = [ ./alist.nix ];
+  imports = [./alist.nix];
 
   boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
 
@@ -104,16 +106,15 @@
 
   services.alist = {
     enable = true;
-    user = "alist";
-    group = "alist";
     package = pkgs.openlist;
+    group = "media";
+    settings = {
+      scheme = {
+        address = "0.0.0.0";
+        http_port = 5244;
+      };
+    };
   };
-  users.users."alist".extraGroups = [ "media" ];
 
-  users.groups.media = { };
-
-  networking.firewall.allowedTCPPorts = [
-    80
-    5244
-  ];
+  networking.firewall.allowedTCPPorts = [ 80 5244 ];
 }
