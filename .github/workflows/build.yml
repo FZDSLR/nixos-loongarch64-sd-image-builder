@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image_type: ["loongarch64_99pi_tf", "loongarch64_99pi_wifi"]
+        image_type: ["loongarch64_99pi_tf"]
 
     steps:
       - name: Maximize build space

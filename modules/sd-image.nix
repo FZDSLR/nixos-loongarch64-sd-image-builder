@@ -14,7 +14,7 @@
   hardware.enableAllHardware = lib.mkForce false; # https://github.com/NixOS/nixpkgs/issues/154163
 
   boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_99pi_tf;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_6_12_2k300;
     initrd.includeDefaultModules = false;
     initrd.availableKernelModules = lib.mkForce [
       "ext4"
@@ -47,9 +47,10 @@
     };
   };
 
+  image.baseName = lib.mkDefault "nixos-loongarch64-sd-image";
+
   sdImage = {
     rootPartitionUUID = "d9d94464-db0a-4f2a-ab79-bfb15bc9c8b4";
-    imageBaseName = lib.mkDefault "nixos-loongarch64-sd-image";
     compressImage = false;
     populateFirmwareCommands = lib.optionalString (config.boot.loader.generic-extlinux-compatible.enable) ''
       ${config.boot.loader.generic-extlinux-compatible.populateCmd} -c ${config.system.build.toplevel} -d ./firmware
