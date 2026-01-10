@@ -116,5 +116,22 @@
     };
   };
 
+  services.nginx = {
+    enable = true;
+    virtualHosts."default" = {
+      default = true;
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 80;
+        }
+      ];
+      root = "/var/www/default";
+      locations."/" = {
+        index = "index.html index.htm";
+      };
+    };
+  };
+
   networking.firewall.allowedTCPPorts = [ 80 5244 ];
 }
