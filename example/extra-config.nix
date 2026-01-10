@@ -18,7 +18,7 @@
       "spi"
       "i2c"
       "gpio"
-      "navidrome"
+      "media"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJYA3PS2P9GDKxQ/0XavUaCgHRDpvFQwnmytCQAHkX53 fzdslr_nixos_z3air"
@@ -51,7 +51,9 @@
     ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_aosc_2k300;
+  imports = [./alist.nix];
+
+  boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
 
   time.timeZone = "Asia/Shanghai";
 
@@ -99,4 +101,14 @@
       "ntp.tencent.com"
     ];
   };
+
+  services.alist = {
+    enable = true;
+    user = "alist";
+    group = "media";
+    package = pkgs.openlist;
+  };
+
+  users.groups.media = {};
+  networking.firewall.allowedTCPPorts = [ 80 5244 ];
 }
