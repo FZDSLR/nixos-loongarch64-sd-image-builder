@@ -51,7 +51,7 @@
     ];
   };
 
-  imports = [./alist.nix];
+  imports = [ ./alist.nix ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
 
@@ -105,10 +105,15 @@
   services.alist = {
     enable = true;
     user = "alist";
-    group = "media";
+    group = "alist";
     package = pkgs.openlist;
   };
+  users.users."alist".extraGroups = [ "media" ];
 
-  users.groups.media = {};
-  networking.firewall.allowedTCPPorts = [ 80 5244 ];
+  users.groups.media = { };
+
+  networking.firewall.allowedTCPPorts = [
+    80
+    5244
+  ];
 }
