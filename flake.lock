@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1768025602,
-        "narHash": "sha256-9ffUH97E4+QExIbhKjPjFfHV+bTGNDNswfQpkgJdgEA=",
+        "lastModified": 1768069649,
+        "narHash": "sha256-yO1/FeIq0x2CC8NyT0aw5WEdLR8no8XEHSsNeK/cyII=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "fa29d40ffe688385ac8c61999408ed16d39e82dc",
+        "rev": "7ff1d55f9a070bf058904d38234609209a6bc111",
         "type": "github"
       },
       "original": {
