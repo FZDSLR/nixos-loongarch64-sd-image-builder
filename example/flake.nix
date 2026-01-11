@@ -13,7 +13,6 @@
     };
 
     nixpkgs.follows = "nixos-loongarch64-builder/nixpkgs";
-    rust-overlay.follows = "nixos-loongarch64-builder/rust-overlay";
   };
 
   nixConfig = {
