@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     quickjs-ng
     duf
+    w3m
   ];
 
   programs.fish = {
@@ -15,7 +16,7 @@
       set fish_greeting
     '';
     shellAliases = {
-      la = "eza --git --long --all --git --header";
+      la = "eza --git --long --all --group --git --header";
     };
     plugins = [
       {
