@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767971841,
-        "narHash": "sha256-TwDXF4MkmjI9c3Sly9FOWXf4sPbre6ZujG87v39G1Ig=",
+        "lastModified": 1768068402,
+        "narHash": "sha256-bAXnnJZKJiF7Xr6eNW6+PhBf1lg2P1aFUO9+xgWkXfA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0e4217b2c4827e71e2e612accccb01981c16afda",
+        "rev": "8bc5473b6bc2b6e1529a9c4040411e1199c43b4c",
         "type": "github"
       },
       "original": {
@@ -23,15 +23,14 @@
     },
     "nixos-loongarch64-builder": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1767983604,
-        "narHash": "sha256-x7kFIrfKpNvoFSHKPTIz0TWcP9dd7gjqJvD11DGo14U=",
+        "lastModified": 1768140318,
+        "narHash": "sha256-G5JeVFq4ssWbsez39tOu27uQGSi8CQVH1DJcxz+616c=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "f78a83758388cad85f5ef5d324f1d6361a23cc62",
+        "rev": "fd1aefec9143e8601de7af53cb70d6d9e3b130f8",
         "type": "github"
       },
       "original": {
@@ -49,19 +48,14 @@
           "nixos-loongarch64-sd-image-builder",
           "nixos-loongarch64-builder",
           "nixpkgs"
-        ],
-        "rust-overlay": [
-          "nixos-loongarch64-sd-image-builder",
-          "nixos-loongarch64-builder",
-          "rust-overlay"
         ]
       },
       "locked": {
-        "lastModified": 1767910415,
-        "narHash": "sha256-kE7WwdNYrnl8/gJLULBIdSyllVrPKBvR69TTFsdubMU=",
+        "lastModified": 1768117137,
+        "narHash": "sha256-KfZ3WOEXQRhw5cNK95c1DuJerqlRngz7xvyMxyzNdpI=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "2aafb92b31b6ea9085b50db82d19881d20679dcf",
+        "rev": "f8da0afb662d1d963a4ebe2c579dae9fbd52f070",
         "type": "github"
       },
       "original": {
@@ -94,32 +88,7 @@
         "nixpkgs": [
           "nixos-loongarch64-builder",
           "nixpkgs"
-        ],
-        "rust-overlay": [
-          "nixos-loongarch64-builder",
-          "rust-overlay"
         ]
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "nixos-loongarch64-builder",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1767926800,
-        "narHash": "sha256-x0n73J6ufD/EhDlVdcoAmF0OQHZ+b0a2cKDc8RZyt+o=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "499e9eed88ff9494b6604205b42847e847dfeb91",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     }
   },
