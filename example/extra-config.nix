@@ -38,7 +38,7 @@
     ];
   };
 
-  users.groups.media = {};
+  users.groups.media = { };
 
   nix.settings = {
     substituters = [
@@ -53,7 +53,7 @@
     ];
   };
 
-  imports = [./alist.nix];
+  imports = [ ./alist.nix ];
 
   boot.kernelPackages = pkgs.linuxPackages_6_12_2k300_rt;
 
@@ -133,5 +133,30 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 5244 ];
+  systemd.services.update-system = {
+    description = "Auto update NixOS system";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ./update-system.sh;
+      User = "root";
+      Group = "root";
+      Restart = "no";
+    };
+  };
+
+  systemd.timers.update-system = {
+    description = "Timer for daily system update at 8:00 AM";
+    timerConfig = {
+      OnCalendar = "*-*-* 08:00:00";
+      Unit = "update-system.service";
+    };
+    wantedBy = [ "timers.target" ];
+  };
+
+  networking.firewall.allowedTCPPorts = [
+    80
+    5244
+  ];
 }
