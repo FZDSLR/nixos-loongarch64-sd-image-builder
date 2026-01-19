@@ -42,24 +42,21 @@ fi
 
 # 执行nix-store -r
 echo "正在执行 nix-store -r $NEW_SYSTEM_PATH ..."
-nix-store -r "$NEW_SYSTEM_PATH"
-if [[ $? -ne 0 ]]; then
+if ! nix-store -r "$NEW_SYSTEM_PATH"; then
     echo "错误：nix-store -r 执行失败" >&2
     exit 1
 fi
 
 # 执行nix-env --set
 echo "正在设置系统配置文件..."
-nix-env --profile /nix/var/nix/profiles/system --set "$NEW_SYSTEM_PATH"
-if [[ $? -ne 0 ]]; then
+if ! nix-env --profile /nix/var/nix/profiles/system --set "$NEW_SYSTEM_PATH"; then
     echo "错误：nix-env --set 执行失败" >&2
     exit 1
 fi
 
 # 执行switch-to-configuration
 echo "正在切换到新配置..."
-/nix/var/nix/profiles/system/bin/switch-to-configuration switch
-if [[ $? -ne 0 ]]; then
+if ! /nix/var/nix/profiles/system/bin/switch-to-configuration switch; then
     echo "警告：switch-to-configuration 可能没有完全成功，请检查系统状态" >&2
     exit 1
 fi
