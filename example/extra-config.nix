@@ -139,7 +139,14 @@
     wants = [ "network-online.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = ./update-system.sh;
+      ExecStart =
+        let
+          update-system = pkgs.writeShellApplication {
+            name = "update-system";
+            text = (builtins.readFile ./update-system.sh);
+          };
+        in
+        lib.getExe update-system;
       User = "root";
       Group = "root";
       Restart = "no";
