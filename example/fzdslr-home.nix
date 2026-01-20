@@ -8,6 +8,15 @@
     quickjs-ng
     duf
     w3m
+    (python3.withPackages (
+      python-pkgs: with python-pkgs; [
+        python-periphery
+        requests
+        psutil
+        pillow
+        flask
+      ]
+    ))
   ];
 
   programs.fish = {
