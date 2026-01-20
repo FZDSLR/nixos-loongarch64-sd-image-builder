@@ -144,6 +144,7 @@
           update-system = pkgs.writeShellApplication {
             name = "update-system";
             text = (builtins.readFile ./update-system.sh);
+            runtimeInputs = with pkgs; [ nix curl ];
           };
         in
         lib.getExe update-system;
