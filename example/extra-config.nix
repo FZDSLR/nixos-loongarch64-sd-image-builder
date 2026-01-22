@@ -137,6 +137,7 @@
     description = "Auto update NixOS system";
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
+    restartIfChanged = false;
     serviceConfig = {
       Type = "oneshot";
       ExecStart =
@@ -144,7 +145,10 @@
           update-system = pkgs.writeShellApplication {
             name = "update-system";
             text = (builtins.readFile ./update-system.sh);
-            runtimeInputs = with pkgs; [ nix curl ];
+            runtimeInputs = with pkgs; [
+              nix
+              curl
+            ];
           };
         in
         lib.getExe update-system;
