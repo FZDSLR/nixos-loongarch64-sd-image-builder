@@ -167,6 +167,12 @@
     wantedBy = [ "timers.target" ];
   };
 
+  services.node-red = {
+    enable = true;
+    port = 1880;
+    openFirewall = true;
+  };
+
   networking.firewall.allowedTCPPorts = [
     80
     5244
