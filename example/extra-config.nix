@@ -172,6 +172,7 @@
     port = 1880;
     openFirewall = true;
     configFile = "/var/lib/node-red/settings.js";
+    withNpmAndGcc = true;
   };
 
   networking.firewall.allowedTCPPorts = [
