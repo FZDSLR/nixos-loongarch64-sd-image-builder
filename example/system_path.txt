@@ -1,0 +1,1 @@
+/nix/store/ry573gs8pxhsia998ihkakf5584rz0hj-nixos-system-nixos-loongarch64-sd-card-26.05.20260126.bfc1b8a
