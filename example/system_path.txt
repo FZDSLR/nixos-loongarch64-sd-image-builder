@@ -1,0 +1,1 @@
+/nix/store/8yj6ymn2ldjqfimsg27assh93f8sik8i-nixos-system-nixos-loongarch64-sd-card-26.05.20260208.d6c7193
