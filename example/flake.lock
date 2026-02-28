@@ -26,11 +26,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1771527132,
-        "narHash": "sha256-qgvZC0kk+vIhTHbhkAHHZKX9UamV4gBPgxYpZ2NZanM=",
+        "lastModified": 1772264005,
+        "narHash": "sha256-M3WsLS5OvMWMNFfKqayMDN1MskMiHFar3cO+9SXRYF4=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-builder",
-        "rev": "cd31b7f69c8599c903909051b456bec58731e144",
+        "rev": "c8bafdff5064ee99a2b447281747a73bb793ef9f",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772144594,
-        "narHash": "sha256-O8VLlJAmYAsQ3a029IF2QqkK6fOYiAoX1+/AYKwMA4c=",
+        "lastModified": 1772264197,
+        "narHash": "sha256-mdbNmDNxaGjRJ8CtH5e3GEoSN89exhW8YgD1uY6aLFk=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "bc9f6b33eed413b0809539370443d7754d72af1d",
+        "rev": "9c2640d50d4f9c196940a5115cb81e32b2af6b54",
         "type": "github"
       },
       "original": {
