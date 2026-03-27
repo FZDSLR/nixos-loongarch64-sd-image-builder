@@ -10,7 +10,6 @@
     git
     curl
     vim
-    neofetch
     htop
     which
     mtdutils
