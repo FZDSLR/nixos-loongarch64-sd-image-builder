@@ -1,7 +1,8 @@
 {
   inputs = {
     nixos-loongarch64-sd-image-builder = {
-      url = "github:FZDSLR/nixos-loongarch64-sd-image-builder";
+      # url = "github:FZDSLR/nixos-loongarch64-sd-image-builder";
+      url = "path:./../";
       inputs.nixos-loongarch64-builder.follows = "nixos-loongarch64-builder";
     };
 
