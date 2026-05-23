@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779336838,
-        "narHash": "sha256-n1+l78hJRABp4cQHKeD0BVByT0vZLPqd09Tvoq8Q+d8=",
+        "lastModified": 1779507042,
+        "narHash": "sha256-7wOwi8B6D0BYsieZCnHZZj2sNUzgJhLoIVSfkwB7lxQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "928d72376949e222ea4f07b44828a55b0136422e",
+        "rev": "509ed3c603349a9d43de9e2ae6613baea6bd5b34",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779404262,
-        "narHash": "sha256-Tc+mny1LfeM+EzlZ+Yg59XixklqnRNPEmXw6AB8NABc=",
+        "lastModified": 1779490237,
+        "narHash": "sha256-sDyqLzrU31D8GCH21ppb4WPainGVlWE48uRsGk+wuqA=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "70261d565bb23917d25b3b16486fe79c2797fa22",
+        "rev": "61ac78ffa4a707d470f5b0e9845f9fd48036a49c",
         "type": "github"
       },
       "original": {
