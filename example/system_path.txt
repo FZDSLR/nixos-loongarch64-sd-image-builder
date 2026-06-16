@@ -1,0 +1,1 @@
+/nix/store/9h7j1qaafg3wp6ng9yv0233xlv7xsiv9-nixos-system-nixos-loongarch64-sd-card-26.05.20260505.549bd84
