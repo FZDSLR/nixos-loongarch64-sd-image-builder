@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787696173,
-        "narHash": "sha256-DYqiH8IgKmwrKyf6hnR2FzW074+/L5vl8LaUmGk1j78=",
+        "lastModified": 1787797552,
+        "narHash": "sha256-DAlGBiqu+CLBxsnHRm12BDIaLwf3lxyg4m5C15+3qtE=",
         "owner": "FZDSLR",
         "repo": "nixos-loongarch64-sd-image-builder",
-        "rev": "7e079b0c4d82776101bb92135d08e85a8c2e62e1",
+        "rev": "bbd440c32b822d5bae98c0c207a509feba592e3d",
         "type": "github"
       },
       "original": {
